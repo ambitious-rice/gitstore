@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>21 天稳定推进打卡面板</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="hero card">
+        <div>
+          <p class="eyebrow">21 DAYS · LOW FRICTION</p>
+          <h1>稳定推进打卡与复盘</h1>
+          <p class="subtitle">
+            每天只追求：到场、产出、复盘。这个页面会自动保存你的记录。
+          </p>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span>已打卡天数</span>
+            <strong id="daysChecked">0 / 21</strong>
+          </div>
+          <div class="stat">
+            <span>当前周</span>
+            <strong id="weekLabel">-</strong>
+          </div>
+        </div>
+      </header>
+
+      <section class="card controls">
+        <label>
+          <span>选择日期</span>
+          <input type="date" id="datePicker" />
+        </label>
+        <div class="chips">
+          <label class="chip"><input type="checkbox" id="arrived" />今天到岗</label>
+          <label class="chip"><input type="checkbox" id="workout" />完成健身窗口</label>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>时间块记录（大概做了什么）</h2>
+        <div class="timeline" id="timeline"></div>
+      </section>
+
+      <section class="grid-2">
+        <section class="card">
+          <h2>每日收尾（10 分钟）</h2>
+          <div class="stack" id="dailySummary"></div>
+        </section>
+        <section class="card">
+          <h2>每周总结</h2>
+          <p class="hint">建议周六写完，周日只做轻量规划。</p>
+          <label class="field">
+            <span>本周最有效的推进</span>
+            <textarea id="weeklyProgress" rows="3"></textarea>
+          </label>
+          <label class="field">
+            <span>本周卡点与调整</span>
+            <textarea id="weeklyBlockers" rows="3"></textarea>
+          </label>
+          <label class="field">
+            <span>下周 3 个重点</span>
+            <textarea id="weeklyNext" rows="3"></textarea>
+          </label>
+        </section>
+      </section>
+
+      <section class="card actions">
+        <button id="saveBtn" class="btn primary">保存今天记录</button>
+        <button id="resetDayBtn" class="btn ghost">清空当天</button>
+        <p id="saveStatus" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
